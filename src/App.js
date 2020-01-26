@@ -1,26 +1,46 @@
-import React from 'react';
+import React,{Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Appbar from './Components/Appbar';
+import { TextField } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+import Dashboard from './Components/Dashboard';
 
-function App() {
-  return (
+class App extends Component {
+  state = {
+   loggedIn: false,
+
+  }
+
+  logIn = () =>{
+    this.setState ({
+      loggedIn: true
+    })
+  }
+
+
+
+  render() {
+    let defaultView;
+    if(this.state.loggedIn){
+      defaultView = <Dashboard></Dashboard>
+    }
+
+    else defaultView = <div>
+    <TextField></TextField>
+     <br></br>
+    <TextField></TextField>
+    <br></br>
+    <Button variant="contained" onClick={this.logIn}>Default</Button>
+    </div>
+    
+      return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Appbar></Appbar>
+      {defaultView}
+      
     </div>
   );
-}
+}}
 
 export default App;
