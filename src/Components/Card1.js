@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Card1() {
+export default function Card1(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
@@ -35,13 +35,13 @@ export default function Card1() {
         <Typography variant="h5" component="h2">
         Online Mode
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
+        <Typography className="body2">
           Is this application connected to the internet?
         </Typography>
         
       </CardContent>
       <CardActions>
-       <Switch/>
+       <Switch toggleOnline={props.toggleOnline}/>
       </CardActions>
     </Card>
   );

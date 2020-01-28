@@ -1,13 +1,13 @@
 import React from 'react';
 import Switch from '@material-ui/core/Switch';
-
-export default function Switches() {
+export default function Switches(props) {
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: true,
   });
 
   const handleChange = name => event => {
+    props.toggleOnline()
     setState({ ...state, [name]: event.target.checked });
   };
 
