@@ -35,9 +35,11 @@ export default function Card2(props) {
         <Typography variant="h5" component="h2">
           Master Volume
         </Typography>
-        <Typography varient="body2">
+
+        <Typography classname="body2">
           Overrides all other sound setting in this application
         </Typography>
+
         <Slider
         defaultValue={props.volume}
         // getAriaValueText={()=>props.toggleVolume}
@@ -49,6 +51,7 @@ export default function Card2(props) {
         valueLabelDisplay="auto"
         onChange={props.toggleVolume}
       />
+
       </CardContent>
     </Card>
   );

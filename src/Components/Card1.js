@@ -35,14 +35,17 @@ export default function Card1(props) {
         <Typography variant="h5" component="h2">
         Online Mode
         </Typography>
+
         <Typography className="body2">
           Is this application connected to the internet?
         </Typography>
         
       </CardContent>
+
       <CardActions>
        <Switch toggleOnline={props.toggleOnline}/>
       </CardActions>
+      
     </Card>
   );
 }

@@ -46,13 +46,28 @@ toggleVolume=(event,newValue) => {
   }
 }
 
+// toggleQuality = () => {
+//   this.setState({online:!this.state.online})
+//   if(!this.state.online){
+//     let newMessages=this.state.messages
+//     newMessages.push("!online")
+//     this.setState({messages:newMessages})
+//   }
+//   else {
+//     let newMessages=this.state.messages
+//     let index=newMessages.findIndex(item => item=="")
+//     newMessages.splice(index,1)
+//     this.setState({messages:newMessages})
+//   }
+// }
+
   render(){
     console.log(this.state.volume)
     return (
    <div className="box">
      <Card1 toggleOnline={this.toggleOnline}></Card1>
      <Card2 toggleVolume={this.toggleVolume}volume={this.state.volume}></Card2>   
-     <Card3/>
+     <Card3 toggleQuality={this.toggleQuality}></Card3>
      {this.state.messages.map(message => {
        return(
          <p>{message}</p>

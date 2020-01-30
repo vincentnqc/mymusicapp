@@ -5,6 +5,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles({
   card: {
@@ -30,24 +33,27 @@ export default function Card3() {
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
+
+        <Typography varient="h5" component="h2">
+          Sound Quality
         </Typography>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
+
+        <Typography varient="body2">
+          Manually control the music quality in event of poor connection
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
+
+        <InputLabel varient="h5" varient="h2">Quality</InputLabel>
+
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+        >
+          <MenuItem value={10}>Low</MenuItem>
+          <MenuItem value={20}>Normal</MenuItem>
+          <MenuItem value={30}>High</MenuItem>
+        </Select>
+
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }
