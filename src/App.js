@@ -26,12 +26,15 @@ class App extends Component {
       defaultView = <Dashboard></Dashboard>
     }
 
-    else defaultView = <div>
-    <TextField></TextField>
+    else defaultView = <div className="viewcontainer">
+    <div className="view">
+    <TextField label="Username*" style={{width:"100%"}} ></TextField>
      <br></br>
-    <TextField></TextField>
+    <TextField label="Password*" type="password" style={{width:"100%"}} ></TextField>
     <br></br>
-    <Button variant="contained" onClick={this.logIn}>Default</Button>
+    <br></br>
+    <Button variant="contained" color="primary" style={{width:"100%"}} onClick={this.logIn}>LOGIN</Button>
+    </div>
     </div>
     
       return (

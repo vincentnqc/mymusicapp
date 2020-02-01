@@ -4,3 +4,13 @@
   align-items: center;
 
 }
+
+.view {
+  width: 20%;
+}
+
+.viewcontainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+}

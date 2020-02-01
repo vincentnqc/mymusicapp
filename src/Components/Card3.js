@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Card3() {
+export default function Card3(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
@@ -44,7 +44,7 @@ export default function Card3() {
 
         <InputLabel varient="h5" varient="h2">Quality</InputLabel>
 
-        <Select
+        <Select onChange={props.toggleQuality}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
         >
