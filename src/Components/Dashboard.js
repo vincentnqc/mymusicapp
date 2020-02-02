@@ -3,8 +3,27 @@ import Card1 from "./Card1";
 import Card2 from "./Card2";
 import Card3 from "./Card3";
 import "./Dashboard.css";
+import { withStyles } from '@material-ui/core/styles';
 
-export default class Dashboard extends Component {
+
+const styles = theme => ({
+  card: {
+    maxWidth: 400,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
+
+class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -79,12 +98,30 @@ export default class Dashboard extends Component {
     }
   };
 
+  // useStyles = withStyles({
+  //   card: {
+  //     maxWidth: 400,
+  //   },
+  //   bullet: {
+  //     display: 'inline-block',
+  //     margin: '0 2px',
+  //     transform: 'scale(0.8)',
+  //   },
+  //   title: {
+  //     fontSize: 14,
+  //   },
+  //   pos: {
+  //     marginBottom: 12,
+  //   },
+  // });
+  
+
   render() {
     // console.log(this.state.volume)
     return (
       <div>
         <h1 class="welcome" style= {{textAlign: "left", paddingLeft: "5.5%"}}>Welcome User!</h1>
-        <div className="box">
+        <div className="box" >
           <Card1 toggleOnline={this.toggleOnline}></Card1>
           <Card2
             toggleVolume={this.toggleVolume}
@@ -93,7 +130,7 @@ export default class Dashboard extends Component {
           <Card3 toggleQuality={this.toggleQuality}></Card3>
         </div>
         <div>
-          <h5>Sytem Notifications:</h5>
+          <h5>System Notifications:</h5>
           {this.state.messages.map(message => {
             return <p>{message}</p>;
           })}
@@ -102,3 +139,5 @@ export default class Dashboard extends Component {
     );
   }
 }
+
+export default withStyles(styles)(Dashboard)
