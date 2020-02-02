@@ -29,7 +29,7 @@ export default function Card1(props) {
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} >
       <CardContent>
        
         <Typography variant="h5" component="h2">
